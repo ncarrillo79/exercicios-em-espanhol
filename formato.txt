@@ -1,0 +1,85 @@
+/*Enunciado Ejercicio 
+
+
+Ejemplos:
+
+Como hacerlo:
+
+
+*/
+
+exercicio 51:
+
+Encriptar Palavra
+Uma das formas de se gerar uma palavra nova é, para cada letra da palavra original, avançar uma quantidade de letras do alfabeto. Por exemplo, se a palavra original é “gato”, podemos gerar uma nova palavra avançando para cada letra (“g”, ”a”, “t”, “o”) duas letras no alfabeto. Portanto, “g” se tornaria “i”, “a” se tornaria “c” e a palavra “gato” seria transformada em “icvg”.
+
+Implemente a função ao lado que recebe um valor, a quantidade de letras a serem avançadas, e uma string, a palavra original. A função deve retornar outra string, a nova palavra gerada
+
+Exemplo: se o valor passado for 3 e a palavra original for “escola”, a função deve retornar “hvfrod”.
+
+Dica: Strings se comportam parecido com arrays. Então, podemos obter o número de caracteres de uma string utilizando a propriedade length como se segue:
+
+let palavra = "abcdef";
+let tamanho = palavra.length;//Nesse caso a variável tamanho vai receber o valor 6 que é o número de caracteres em palavra
+
+Outra semelhança é que podemos acessar um caractere da string por sua posição, então se quisermos pegar a primeira letra da string palavra acima podemos fazer:
+let primeiraLetra = palavra[0]//Com isso, temos que primeiraLetra recebeu a string “a”;
+let segundaLetra = palavra[1]//Com isso, temos que segundaLetra recebeu a string “b”;
+
+Você pode achar útil criar uma variável que represente o alfabeto como abaixo:
+let alfabeto=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+
+exrecicio 52
+
+É Número Driven
+Um número é chamado “Número Driven” se ele pode ser escrito na forma 3^n - 1 (3 elevado a n menos 1), com n sendo um número natural (1, 2, 3, …). Implemente a função ao lado que recebe um valor como parâmetro e retorna a mensagem “É desse tipo”, caso o número passado seja um Número Driven, ou “Não é desse tipo” caso contrário.
+
+Exemplo: caso o valor seja 8 (3^2 - 1), a função deve retornar "É desse tipo"
+
+Exemplo: caso o número passado seja 80, temos que 80 é a mesma coisa que 3^4-1, logo ele pode ser escrito no formato acima fazendo n=4. Portanto, a função deve retornar “É desse tipo”.
+
+Exemplo: caso o número seja 5, por outro lado, não é um "Número Driven", pois se n for 1, temos que 3^1-1=2 e se n for 2, temos que 3^2-1=8, ou seja, não existe um valor natural de n que faça 3^n-1 chegar em 5. A função deve retornar, então “Não é desse tipo”.
+
+
+exercicio 53
+É Palíndromo
+Implemente a função ao lado que recebe uma string como parâmetro e retorna a string sim caso a string passada seja um palíndromo ou não caso contrário. Palíndromo é a categoria de strings que são escritas da mesma forma de trás para frente, por exemplo “aba”, “arara” e “abcdcba”.
+
+
+
+Dica: Strings se comportam parecido com arrays. Então, podemos obter o número de caracteres de uma string utilizando a propriedade length como se segue:
+
+
+
+let palavra = "abcdef";
+
+let tamanho = palavra.length;//Nesse caso a variável tamanho vai receber o valor 6 que é o número de caracteres em palavra
+
+
+
+Outra semelhança é que podemos acessar um caractere da string por sua posição, então se quisermos pegar a primeira letra da string palavra acima podemos fazer:
+
+let primeiraLetra = palavra[0]//Com isso, temos que primeiraLetra recebeu a string “a”;
+
+let segundaLetra = palavra[1]//Com isso, temos que segundaLetra recebeu a string “b”;
+
+
+for(var i = palavra.length - 1; i >= 0; i--) {
+   palindromo += palavra[i]
+}
+
+if (palavra == palindromo) {
+   return "SIM, SOU UM PALÍNDROMO"
+} else {
+   return "INFELIZMENTE, NÃO SOU UM PALÍNDROMO"
+}
+
+
+exrecicio 54
+Implemente a função ao lado, que concatena em uma única string todos os números da array fornecida. Porém, com algumas regras:
+- Números múltiplos de 3 devem ser substituídos pela string "Tchap"
+- Números múltiplos de 5 devem ser substituídos pela string "Tchura"
+- Números múltiplos de 3 e 5 ao mesmo tempo devem ser substituídos pela string "TchapTchura"
+
+Exemplo: deve retornar "12Tchap4Tchura711TchapTchura" quando passada a array [1, 2, 3, 4, 5, 7, 11, 15]
